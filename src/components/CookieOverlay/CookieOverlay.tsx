@@ -3,12 +3,12 @@ import { useState } from 'react';
 import { useCookies } from 'react-cookie';
 import '../../sass/app.scss';
 import { ICookieProps } from './cookieType';
-import cookieImageUrl from './cookie.png';
+import cookieImageUrl from '../../assets/images/cookie.png';
 
 const CookieOverlay: FC<ICookieProps> = ({
   isMetaverse = false,
-  privacyPolicyLink,
-  cookiePolicyLink,
+  privacyPolicyLink = '/privacy-policy',
+  cookiePolicyLink = '/privacy-policy#opt9',
   privacyPolicyEvent,
   cookiePolicyEvent,
 }) => {
@@ -44,7 +44,7 @@ const CookieOverlay: FC<ICookieProps> = ({
               website. By accepting you consent to our use of cookies. For more
               detailed information, please check our{' '}
               <a
-                href={privacyPolicyLink ?? '/privacy-policy'}
+                href={privacyPolicyLink}
                 onClick={() => {
                   if (privacyPolicyEvent) {
                     privacyPolicyEvent();
@@ -55,7 +55,7 @@ const CookieOverlay: FC<ICookieProps> = ({
               </a>{' '}
               and{' '}
               <a
-                href={cookiePolicyLink ?? '/privacy-policy#opt9'}
+                href={cookiePolicyLink}
                 onClick={() => {
                   if (cookiePolicyEvent) {
                     cookiePolicyEvent();

@@ -6,10 +6,12 @@ export interface ICookieProps {
   isMetaverse: boolean;
   /**
    * Link to the privacy policy page
+   * @default '/privacy-policy'
    */
   privacyPolicyLink?: string;
   /**
    * Link to the cookie policy page
+   * @default '/privacy-policy#opt9'
    */
   cookiePolicyLink?: string;
   /**
